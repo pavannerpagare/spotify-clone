@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidebar">
+
+            <div class="nav">
+                <div class="nav-option" style="opacity: 1;" id="homeBtn">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#">Home</a>
+                </div>
+                <div class="nav-option search-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="What do you want to play?">
+                </div>
+            </div>
+            <div class="library">
+                <div class="option">
+
+                    <div class="lib-option nav-option">
+                        <img src="library_icon.png">
+                        <a href="#">Your Library</a>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="liked-songs-option" id="likedSongsBtn">
+                    <span>❤️</span>
+                    <span>Liked Songs</span>
+                </div>
+                <div id="playlistsContainer"></div>
+                <div class="lib-boxes">
+                    <div class="box">
+                        <p class="box-p1">Create your first playlist</p>
+                        <p class="box-p2">it's easy we'll help you</p>
+                        <button class="badge" id="createPlaylistBtn">Create Playlist</button>
+                    </div>
+                    <div class="box">
+                        <p class="box-p1">Let's find some podcast to follow</p>
+                        <p class="box-p2">We'll keep you updated on new episodes</p>
+                        <button class="badge">Browse Podcast</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="sticky-nav">
+                <div class="sticky-nav-icons">
+                    <img src="backward_icon.png">
+                    <img src="forward_icon.png">
+                </div>
+
+                <div class="sticky-nav-items">
+                    <button class="badge nav-item">Explore Premium</button>
+                    <button class="badge nav-item dark-badge"><i class="fa-sharp fa-regular fa-circle-down"
+                            style="margin-right: 5px"></i>Install Apps</button>
+                    <i class="fa-regular fa-user nav-item"></i>
+                </div>
+
+            </div>
+
+
+            <h2>Recently played</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="card1img.jpeg" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily update the most played tracks ...</p>
+
+                </div>
+            </div>
+
+            <h2>Trending now near you</h2>
+            <div class="cards-container" id="songsContainer">
+
+            </div>
+            <h2>Featured Charts</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="card6img.jpeg" class="card-img">
+                    <p class="card-title">Top Songs - India</p>
+                    <p class="card-info">Your weekly update the most played tracks ...</p>
+
+                </div>
+                <div class="card">
+                    <img src="card5img.jpeg" class="card-img">
+                    <p class="card-title">Top Songs - India</p>
+                    <p class="card-info">Your weekly update the most played tracks ...</p>
+
+                </div>
+                <div class="card">
+                    <img src="card1img.jpeg" class="card-img">
+                    <p class="card-title">Top Songs - India</p>
+                    <p class="card-info">Your weekly update the most played tracks ...</p>
+
+                </div>
+            </div>
+            <div class="footer">
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <div class="music-player">
+            <audio id="audioPlayer"></audio>
+            <div class="album">
+                <img id="currentSongImage" src="card2img.jpeg">
+                <div class="current-song-info">
+                    <p id="currentSongTitle">No song playing</p>
+                    <p id="currentSongArtist"></p>
+                </div>
+            </div>
+            <div class="player">
+                <div class="player-controls">
+                    <img src="player_icon1.png" class="player-control-icon" id="shuffleBtn">
+                    <img src="player_icon2.png" class="player-control-icon" id="previousBtn">
+                    <button id="playPauseBtn" class="play-pause-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <img src="player_icon4.png" class="player-control-icon" id="nextBtn">
+                    <img src="player_icon5.png" class="player-control-icon" id="repeatBtn">
+
+                </div>
+                <div class="playback-bar">
+                    <span id="currentTime">00:00</span>
+                    <input type="range" min="0" max="100" value="0" class="progress-bar" id="progressBar" step="1">
+                    <span id="duration">00:00</span>
+                </div>
+            </div>
+
+            <div class="control">
+                <span id="muteBtn">🔊</span>
+
+                <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
